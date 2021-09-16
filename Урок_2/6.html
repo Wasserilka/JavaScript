@@ -1,0 +1,30 @@
+<head>
+    <meta charset="utf-8">
+    <script>
+        "use strict";
+
+        let amount = prompt("Какую сумму желаете зачислить?");
+        let suffix = (amount == "" || amount == null) 
+            ? "ошибка"
+            : getSuffix(amount%10);
+        let message = (suffix == "ошибка") 
+            ? "Произошла ошибка!"
+            : `Ваша сумма в ${Number(amount)} рубл${suffix} успешно зачислена.`;
+
+        alert(message);
+
+        function getSuffix(number)
+        {
+            if (number == 1){
+                return "ь";
+            }
+            else if (number > 1 && number < 5){
+                return "я";
+            }
+            else if (number == 0 || number > 4){
+                return "ей";
+            }
+            return "ошибка";
+        }
+    </script>
+</head>
