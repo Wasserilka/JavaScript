@@ -10,34 +10,64 @@
         alert(`Умножение: ${mathOperation(a, b, "multiply")}`);
         alert(`Деление: ${mathOperation(a, b, "divide")}`);
 
-        function mathOperation(arg1, arg2, operation)
-        {
+        /**
+         * Функция вызывает другую функцию, в зависимости
+         * от переданного оператора, и возвращает ее результат
+         * @param {number} arg1
+         * @param {number} arg2
+         * @param {number} operator команда вызова функции
+         * @returns {number} 
+         */
+        function mathOperation(arg1, arg2, operation){
             switch (operation){
                 case "add":
-                return (add(arg1, arg2));
+                return add(arg1, arg2);
                 case "subtract":
-                return (subtract(arg1, arg2));
+                return subtract(arg1, arg2);
                 case "multiply":
-                return (multiply(arg1, arg2));
+                return multiply(arg1, arg2);
                 case "divide":
-                return (divide(arg1, arg2));
+                return divide(arg1, arg2);
             }
         }
         
-        function add(a, b)
-        {
+        /**
+         * Функция возвращает сумму переданных чисел
+         * @param {number} a
+         * @param {number} b
+         * @returns {number} 
+         */
+         function add(a, b){
             return a + b;
         }
-        function subtract(a, b)
-        {
+        
+        /**
+         * Функция возвращает разность переданных чисел
+         * @param {number} a
+         * @param {number} b
+         * @returns {number} 
+         */
+        function subtract(a, b){
             return a - b;
         }
-        function multiply(a, b)
-        {
+        
+        /**
+         * Функция возвращает произведение переданных чисел
+         * @param {number} a
+         * @param {number} b
+         * @returns {number} 
+         */
+        function multiply(a, b){
             return a * b;
         }
-        function divide(a, b)
-        {
+        
+        /**
+         * Функция возвращает частное переданных чисел
+         * @param {number} a
+         * @param {number} b
+         * @returns {number} 
+         */
+        function divide(a, b){
             return a / b;
         }
     </script>
