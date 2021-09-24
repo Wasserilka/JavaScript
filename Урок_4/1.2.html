@@ -1,0 +1,67 @@
+<head>
+    <meta charset="utf-8">
+    <script>
+        "use strict";
+
+        //es5
+        function Post(author, text, date){
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        Post.prototype.edit = function(text){
+            this.text = text;
+        }
+
+        let objPost = new Post("автор", "", "01.01.1970");
+        objPost.edit("сообщение");
+
+        function AttachedPost(author, text, date){
+            Post.call(this, author, text, date);
+            this.highlighted = false;
+        }
+
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+
+        AttachedPost.prototype.makeTextHighlighted = function(){
+            this.highlighted = true;
+        }
+
+        let objAttachedPost = new AttachedPost("автор_2", "", "02.01.1970");
+        objAttachedPost.edit("ответ");
+        objAttachedPost.makeTextHighlighted();
+
+        //es6
+        class PostClass {
+            constructor(author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+
+            edit(text) {
+                this.text = text;
+            }
+        }
+
+        let objClassPost = new PostClass("автор", "", "01.01.1970");
+        objClassPost.edit("сообщение");
+
+        class AttachedPostClass extends PostClass{
+            constructor(author, text, date) {
+                super(author, text, date);
+                this.highlighted = false;
+            }
+
+            makeTextHighlighted() {
+                this.highlighted = true;
+            }
+        }
+
+        let objClassAttachedPost = new AttachedPostClass("автор_2", "", "02.01.1970");
+        objClassAttachedPost.edit("ответ");
+        objClassAttachedPost.makeTextHighlighted();
+    </script>
+</head>

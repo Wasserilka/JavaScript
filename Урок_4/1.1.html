@@ -1,0 +1,36 @@
+<head>
+    <meta charset="utf-8">
+    <script>
+        "use strict";
+
+        //es5
+        function Product(name, price){
+            this.name = name;
+            this.price = price;
+        }
+
+        Product.prototype.make25PercentDiscount = function(){
+            this.price *= 0.75;
+        }
+
+        let objProduct = new Product("продукт", 200);
+        objProduct.make25PercentDiscount();
+        console.log(objProduct);
+
+        //es6
+        class ProductClass {
+            constructor(name, price) {
+                this.name = name;
+                this.price = price;
+            }
+
+            make25PercentDiscount() {
+                this.price *= 0.75;
+            }
+        }
+
+        let objClassProduct = new ProductClass("продукт_2", 300);
+        objClassProduct.make25PercentDiscount();
+        console.log(objClassProduct);
+    </script>
+</head>
