@@ -30,14 +30,12 @@
             },
         ];
 
-        let filterResult = products.filter(element => {
-            if (element.hasOwnProperty('photos')){
-                return element.photos.length > 0;
-            }
-        });
+        let filterResult = products.filter(element => 
+            element.hasOwnProperty('photos') && element.photos.length > 0);
+
         console.log(filterResult);
 
-        let sortResult = products.sort(function (a, b) { return a.price - b.price; });
-        console.log(sortResult);
+        products.sort(function (a, b) { return a.price - b.price; });
+        console.log(products);
     </script>
 </head>
