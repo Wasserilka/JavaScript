@@ -1,0 +1,74 @@
+<head>
+    <meta charset="utf-8">
+    <script>
+        "use strict";
+
+        let a = 2, b = 5;
+
+        alert(`Сложение: ${mathOperation(a, b, "add")}`);
+        alert(`Вычитание: ${mathOperation(a, b, "subtract")}`);
+        alert(`Умножение: ${mathOperation(a, b, "multiply")}`);
+        alert(`Деление: ${mathOperation(a, b, "divide")}`);
+
+        /**
+         * Функция вызывает другую функцию, в зависимости
+         * от переданного оператора, и возвращает ее результат
+         * @param {number} arg1
+         * @param {number} arg2
+         * @param {number} operator команда вызова функции
+         * @returns {number} 
+         */
+        function mathOperation(arg1, arg2, operation){
+            switch (operation){
+                case "add":
+                return add(arg1, arg2);
+                case "subtract":
+                return subtract(arg1, arg2);
+                case "multiply":
+                return multiply(arg1, arg2);
+                case "divide":
+                return divide(arg1, arg2);
+            }
+        }
+        
+        /**
+         * Функция возвращает сумму переданных чисел
+         * @param {number} a
+         * @param {number} b
+         * @returns {number} 
+         */
+         function add(a, b){
+            return a + b;
+        }
+        
+        /**
+         * Функция возвращает разность переданных чисел
+         * @param {number} a
+         * @param {number} b
+         * @returns {number} 
+         */
+        function subtract(a, b){
+            return a - b;
+        }
+        
+        /**
+         * Функция возвращает произведение переданных чисел
+         * @param {number} a
+         * @param {number} b
+         * @returns {number} 
+         */
+        function multiply(a, b){
+            return a * b;
+        }
+        
+        /**
+         * Функция возвращает частное переданных чисел
+         * @param {number} a
+         * @param {number} b
+         * @returns {number} 
+         */
+        function divide(a, b){
+            return a / b;
+        }
+    </script>
+</head>

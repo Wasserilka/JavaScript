@@ -1,0 +1,38 @@
+<head>
+    <meta charset="utf-8">
+    <script>
+        "use strict";
+
+        let amount = prompt("Какую сумму желаете зачислить?");
+        let suffix = (amount === "" || amount === null) 
+            ? "ошибка"
+            : getSuffix(amount);
+        let message = (suffix === "ошибка") 
+            ? "Произошла ошибка!"
+            : `Ваша сумма в ${Number(amount)} рубл${suffix} успешно зачислена.`;
+
+        alert(message);
+
+        /**
+         * Функция определяет суффикс по двум последним
+         * символам переданного числа и возвращает его
+         * @param {number} number
+         * @returns {string} 
+         */
+        function getSuffix(number)
+        {
+            let lastChar = number%10;
+            if (lastChar === 0 || lastChar > 4 
+            || number.charAt(number.length - 2) === "1"){
+                return "ей";
+            }
+            else if (lastChar === 1){
+                return "ь";
+            }
+            else if (lastChar > 1 && lastChar < 5){
+                return "я";
+            }
+            return "ошибка";
+        }
+    </script>
+</head>
