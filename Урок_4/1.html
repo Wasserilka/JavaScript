@@ -16,8 +16,7 @@
         function getObject(number){
             let numObject = {};
 
-            if (number > 999 || number < 0 || !Number.isInteger(+number)
-            || number === NaN){
+            if (number > 999 || number < 0 || !Number.isInteger(+number)){
                 console.log("Ошибка!");
             } else {     
                 numObject.units = number%10;
