@@ -1,0 +1,29 @@
+<head>
+    <meta charset="utf-8">
+    <script>
+        "use strict";
+
+        let number = 349;
+
+        console.log(getObject(number));
+
+        /**
+         * Функция возвращает объект с 3 свойствами, в которых описаны
+         * разряды переданного числа, или пустой объект в случае ошибки
+         * @param {number} number
+         * @returns {object}
+         */
+        function getObject(number){
+            let numObject = {};
+
+            if (number > 999 || number < 0 || !Number.isInteger(+number)){
+                console.log("Ошибка!");
+            } else {     
+                numObject.units = number%10;
+                numObject.tens = Math.floor(number/10%10);
+                numObject.hundreds = Math.floor(number/100%10);
+            }
+            return numObject;
+        }
+    </script>
+</head>
